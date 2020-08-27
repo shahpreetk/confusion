@@ -85,6 +85,10 @@ const DishDetail = (props) => {
 							{props.dish.name}
 						</BreadcrumbItem>
 					</Breadcrumb>
+					<div className = 'col-12'>
+						<h3>{props.dish.name}</h3>
+						<hr/>
+					</div>
 			    </div>
 			    <div className = 'container'>
 			    	<div className = 'row'>
@@ -199,4 +203,4 @@ class CommentForm extends Component {
 }
 
 
-export default DishDetail 
+export default DishDetail
