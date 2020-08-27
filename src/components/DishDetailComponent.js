@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import { Card, CardImg, CardImgOverlay,
-		 CardText, CardBody, CardTitle,
+import { Card, CardImg, CardText, CardBody, CardTitle,
 		 Breadcrumb, BreadcrumbItem, Button,
 		 Modal, ModalHeader, ModalBody, ModalFooter,
 		 Row, Col, Label
@@ -181,4 +180,4 @@ class CommentForm extends Component {
 }
 
 
-export default DishDetail 
+export default DishDetail
