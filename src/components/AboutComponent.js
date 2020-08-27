@@ -9,7 +9,7 @@ function About(props) {
         return (
             <Media className = 'col-12 mb-4'>
                 <Media left className ='col-2'>
-                    <img src = {leader.image} alt="leader"/>
+                    <img src = {'/assets' + leader.image} alt="leader"/>
                 </Media>
                 <Media body >
                     <Media heading>{leader.name}</Media>
