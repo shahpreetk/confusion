@@ -36,7 +36,7 @@ function RenderComments({comments, dishId, postComment}) {
 							<ul className ='list-unstyled' key = {comment.id}>
 								<li>
 									<div>{comment.comment}</div>
-								    <div>{`-- ${comment.author} , ${new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day:'2-digit'}).format(new Date(Date.parse(comment.date)))}`}</div>
+								    <div>{`-- ${comment.name} , ${new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day:'2-digit'}).format(new Date(Date.parse(comment.date)))}`}</div>
 								</li>
 							</ul>
 						)
@@ -117,7 +117,7 @@ class CommentForm extends Component {
 			isModalOpen: false
 		}
 		this.toggleModal = this.toggleModal.bind(this)
-		this.handleAddComment = this.handleAddComment.bind(this)
+		this.handlePostComment = this.handlePostComment.bind(this)
 	}
 
 	toggleModal () {
@@ -126,18 +126,18 @@ class CommentForm extends Component {
 		})
 	}
 
-	handleAddComment (values) {
+	handlePostComment (values) {
 		this.toggleModal()
-		this.props.postComment(this.props.dishId, values.rating, values.author, values.comment);
+		this.props.postComment(this.props.dishId, values.rating, values.name, values.comment);
 	}
 
 	render(){
 		return (
 			<div>
-				<Button outline onClick = {this.toggleModal}><span className = 'fa fa-pencil fa-lg'></span> Add Comment</Button>
+				<Button outline onClick = {this.toggleModal}><span className = 'fa fa-pencil fa-lg'></span> Post Comment</Button>
 				<Modal isOpen = {this.state.isModalOpen} toggle = {this.toggleModal} >
 					<ModalHeader toggle = {this.toggleModal} >Submit Comment</ModalHeader>
-					<LocalForm  className = 'container' onSubmit = {(values) => {this.handleAddComment(values)} }>
+					<LocalForm  className = 'container' onSubmit = {(values) => {this.handlePostComment(values)} }>
 						<ModalBody>
 							<Row className = 'form-group'>
 								<Col sm = {12}><Label htmlFor = 'rating'>Rating</Label></Col>
