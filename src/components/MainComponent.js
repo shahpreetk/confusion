@@ -82,7 +82,7 @@ class Main extends Component {
               <Route path = "/menu/:dishId" component = { DishWithId } />
               <Route exact path = "/contactus" component = { () => <Contact postFeedback = {this.props.postFeedback} resetFeedbackForm = {this.props.resetFeedbackForm} /> } />
               <Route exact path = "/aboutus" component = { () => <About leaders = {this.props.leaders} /> } />
-              <Redirect to = '/home' />
+              <Redirect path='/' to = '/home' />
             </Switch>
           </CSSTransition>
         </TransitionGroup>
